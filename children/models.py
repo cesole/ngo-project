@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class Children(models.Model):
+class Child(models.Model):
     
     GENDER = (
         ('M','Male'),

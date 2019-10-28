@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row row-flex">
+    {% for child in children %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+            <div class="panel-body">
+                <div class="children" style="background-image: url('{{ MEDIA_URL }}{{ children.image }}')"></div>
+
+                <h3>{{ child.name }}</h3>
+                <p class="child-enjoys">Enoys: {{ child.enjoys }}</p>
+                <p class="child-gender">Gender: {{ child.gender }}</p>
+                <p class="child-birthday">Birthday: {{ child.birthday }}</p>
+
+                <form method="post" action="{% url 'add_to_cart' child.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        Donate: <input name="donation" type="number" min="1" max="999999" class="form-control" placeholder="Donation">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Add</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
