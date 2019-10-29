@@ -18,7 +18,7 @@ from django.contrib import admin
 from accounts import urls as urls_accounts
 from children import urls as urls_children
 from cart import urls as urls_cart
-#from search import urls as urls_search
+from search import urls as urls_search
 #from checkout import urls as urls_checkout
 from children.views import all_children
 from django.views import static
@@ -31,6 +31,6 @@ urlpatterns = [
     url(r'^children/', include(urls_children)),
     url(r'^cart/', include(urls_cart)),
     #url(r'^checkout/', include(urls_checkout)),
-    #url(r'^search/', include(urls_search)),
+    url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
