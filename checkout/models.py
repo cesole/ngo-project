@@ -17,8 +17,8 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False)
-    child = models.ForeignKey(Child, null=False)
+    order= models.ForeignKey(Order, null=False, on_delete=models.CASCADE, related_name="order")
+    child = models.ForeignKey(Child, null=False, on_delete=models.CASCADE, related_name="child")
     donation = models.IntegerField(blank=False)
 
     def __str__(self):
