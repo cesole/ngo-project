@@ -15,8 +15,8 @@ def cart_contents(request):
     
     for id, donation in cart.items():
         child = get_object_or_404(Child, pk=id)
-        total += donation * child.price
-        child_count += quantity
-        cart_items.append({'id': id, 'donation': quantity, 'child': child})
+        total += donation
+        child_count += donation
+        cart_items.append({'id': id, 'donation': donation, 'child': child})
     
     return {'cart_items': cart_items, 'total': total, 'child_count': child_count}
