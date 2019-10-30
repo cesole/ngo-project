@@ -1,9 +1,10 @@
 from django.db import models
 from children.models import Child
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Order(models.Model):
-    full_name = models.CharField(max_length=50, blank=False)
+    full_name = models.ForeignKey(User, blank=False, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20, blank=False)
     country = models.CharField(max_length=40, blank=False)
     postcode = models.CharField(max_length=20, blank=True)
@@ -17,7 +18,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order= models.ForeignKey(Order, null=False, on_delete=models.CASCADE, related_name="order")
+    order= models.ForeignKey(Order, null=False, on_delete=models.CASCADE, related_name="orders")
     child = models.ForeignKey(Child, null=False, on_delete=models.CASCADE, related_name="child")
     donation = models.IntegerField(blank=False)
 
