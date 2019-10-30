@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2>Success!</h2>
-    <p>You are logged in as {{ user.email }} </p>
+    <h3>Your orders history</h3>
+  
+  {% for order in orders %}
+  <tr>
+    <td scope="row">{{ order.id }}</td>
+    <td scope="row">{{ order.date }}</td>
+    <td scope="row">{{ order.child }}</td>
+    <td scope="row">{{ order.donation }}</td>
+  </tr>
+  {% endfor %}
 {% endblock %}

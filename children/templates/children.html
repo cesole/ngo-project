@@ -5,7 +5,7 @@
     {% for child in children %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
-                <div class="children" style="background-image: url('{{ MEDIA_URL }}{{ children.image }}')"></div>
+                <div class="child" style="background-image: url('{{ MEDIA_URL }}{{ child.image }}')"></div>
 
                 <h3>{{ child.name }}</h3>
                 <p class="child-enjoys">Enoys: {{ child.enjoys }}</p>

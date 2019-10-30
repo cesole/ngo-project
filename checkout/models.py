@@ -24,3 +24,5 @@ class OrderLineItem(models.Model):
     def __str__(self):
         return "{0}-{1}".format(
             self.donation, self.child.name)
+            
+            
