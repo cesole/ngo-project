@@ -15,7 +15,7 @@
                 <form method="post" action="{% url 'add_to_cart' child.id %}">
                     {% csrf_token %}
                     <div class="input-group">
-                        Donate: <input name="donation" type="number" min="1" max="999999" class="form-control" placeholder="Donation">
+                        <input name="donation" type="number" min="1" max="999999" class="form-control" placeholder="Donation">
                         <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Add</button>
                         </span>
@@ -25,4 +25,41 @@
         </div>
     {% endfor %}
 </div>
+ <!-- Pagination -->
+    {% if children.has_other_pages %}
+        <ul class="pagination center">
+            {% if children.has_previous %}
+                <!-- This is for when user has searched - the custom URL will keep their search parameters when changing pages -->
+                {% if custom_url %}
+                    <li class="waves-effect"><a href="{{ custom_url }}&page={{ children.previous_page_number }}"><i class="material-icons">Next</i></a></li>
+                {% else %}
+                    <li class="waves-effect"><a href="?page={{ children.previous_page_number }}"><i class="material-icons">Next</i></a></li>
+                {% endif %}
+            {% else %}
+                <li class="disabled"><a href="#!"><i class="material-icons">Previous</i></a></li>
+            {% endif %}
+            {% for i in children.paginator.page_range %}
+                {% if children.number == i %}
+                    <li class="active"><a href="#!">{{ i }}</a></li>
+                {% else %}
+                    <!-- This is for when user has searched - the custom URL will keep their search parameters when changing pages -->
+                    {% if custom_url %}
+                        <li class="waves-effect"><a href="{{ custom_url }}&page={{ i }}">{{ i }}</a></li>
+                    {% else %}
+                        <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            {% if children.has_next %}
+                <!-- This is for when user has searched - the custom URL will keep their search parameters when changing pages -->
+                {% if custom_url %}
+                    <li class="waves-effect"><a href="{{ custom_url }}&page={{ children.next_page_number }}"><i class="material-icons">Next</i></a></li>
+                {% else %}
+                    <li class="waves-effect"><a href="?page={{ children.next_page_number }}"><i class="material-icons">Next</i></a></li>
+                {% endif %}
+            {% else %}
+                <li class="disabled"><a href="#!"><i class="material-icons">Next</i></a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
 {% endblock %}
