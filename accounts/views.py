@@ -27,7 +27,7 @@ def login(request):
     if request.method == 'POST':
         user_form = UserLoginForm(request.POST)
         if user_form.is_valid():
-            user = auth.authenticate(request.POST['username_or_email'],
+            user = auth.authenticate(username=request.POST['username_or_email'],
                                      password=request.POST['password'])
 
             if user:
@@ -62,8 +62,8 @@ def register(request):
         if user_form.is_valid():
             user_form.save()
 
-            user = auth.authenticate(request.POST.get('email'),
-                                     password=request.POST.get('password1'))
+            user = auth.authenticate(username=request.POST['username'],
+                                     password=request.POST['password1'])
 
             if user:
                 auth.login(request, user)
