@@ -43,6 +43,3 @@ class CaseInsensitiveAuth:
             return None
         except User.DoesNotExist:
             return None
-
-
-
