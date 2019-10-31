@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-    <h3>Your orders history</h3>
+   
+  {% if orders %}
+    <h3>Your donations history: </h3>
   
-  {% for order in orders %}
-  <tr>
-    <td scope="row">{{ order.id }}</td>
-    <td scope="row">{{ order.date }}</td>
-    <td scope="row">{{ order.child }}</td>
-    <td scope="row">{{ order.donation }}</td>
-  </tr>
-  {% endfor %}
+    {% for order in orders %}
+    <tr class="profile-orders">
+      <td scope="row">{{ order.id }}</td>
+      <td scope="row">{{ order.date }}</td>
+      <td scope="row">{{ order.child }}</td>
+      <td scope="row">{{ order.donation }}</td>
+    </tr>
+    
+    {% endfor %}
+
+  {% else %}
+    <h3>You have not made any donations yet. </h3>
+  {% endif %} 
+   
+    
 {% endblock %}

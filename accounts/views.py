@@ -4,6 +4,9 @@ from django.urls import reverse
 from .forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from checkout.models import Order
+from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -50,6 +53,10 @@ def profile(request):
     """A view that displays the profile page of a logged in user"""
     return render(request, 'profile.html')
 
+def all_orders(request):
+    orders = Order.objects.filter(full_name=request.user)
+    return render(request, 'profile.html', {"orders":orders})
+ 
 
 def register(request):
     """A view that manages the registration form"""
@@ -72,4 +79,4 @@ def register(request):
         user_form = UserRegistrationForm()
 
     args = {'user_form': user_form}
-    return render(request, 'register.html', args)
+    return render(request, 'register.html', args) 
