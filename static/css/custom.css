@@ -1,6 +1,7 @@
 body {
-    font-family: Arial;
+    font-family: 'Open Sans Condensed', sans-serif !important;
     padding-top: 100px;
+    font-size: 18px !important;
 }
 
 footer {
@@ -9,6 +10,13 @@ footer {
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
     color: #A9A9A9;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #115571 !important;
 }
 
 .icon-bar {
@@ -36,9 +44,17 @@ footer {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 200px;
     margin: 0 auto;
+}
+
+.panel-default {
+    border-color: none !important;
+}
+
+.panel {
+    border: none !important;
 }
 
 caption p {
@@ -63,4 +79,59 @@ caption p {
 
 .product-description {
     min-height: 40px;
+}
+
+.navbar-default {
+    background-color: #31AFB4 !important;
+    border-color: #31AFB4 !important;
+    background-image: none !important;
+    font-weight: 700 !important;
+}
+
+.navbar {
+    background-image: none !important;
+}
+
+.pagination.pagination>li>a, .pagination>li>span {
+    color: #31AFB4 !important;
+}
+
+.btn-success {
+    color: #ffffff;
+    font-weight: 700 !important;
+    background-color: #115571 !important;
+    border-color: #115571 !important;
+    background-image: none !important;
+}
+
+/*-- /Tab Styles --*/
+.tabs{
+    background-color: #2A363B;
+}
+.tabs .tab a:hover, .tabs .tab a.active{
+    color: #e84a5f;
+}
+
+
+/*-- Responsive Styling --*/
+#login_img_container img{
+    max-width: 75px;
+    margin: 50px 0;
+}
+
+.valign-mobile-fix{
+    margin-top: 150px;
+}
+
+@media only screen and (min-width: 768px){
+    .comment-profile-img{
+        max-width: 50px;
+    }
+    #login_img_container img{
+        margin: 150px 0;
+        max-width: 200px;
+    }
+    .valign-mobile-fix{
+        margin-top: auto;
+    }
 }

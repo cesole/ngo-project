@@ -5,13 +5,14 @@
     <h3>Your donations history: </h3>
   
     {% for order in orders %}
-    <tr class="profile-orders">
-      <td scope="row">{{ order.id }}</td>
-      <td scope="row">{{ order.date }}</td>
-      <td scope="row">{{ order.child }}</td>
-      <td scope="row">{{ order.donation }}</td>
-    </tr>
-    
+    <div class="history">
+      <h4>Order number: {{order.id}}</h4>
+    <ul class="history-list">
+      <li scope="row">Date of your order: {{ order.date }}</li>
+      <li scope="row">Child: {{ order.orderlineitem.child }}</li>
+      <li scope="row">Donation: {{ order.orderlineitem.donation }} €</li>
+    </ul>
+    </div>
     {% endfor %}
 
   {% else %}
