@@ -17,7 +17,7 @@ def add_to_cart(request, id):
         cart[id] = cart.get(id, donation) 
 
     request.session['cart'] = cart
-    return redirect(reverse('index'))
+    return redirect(reverse('children'))
 
 
 def adjust_cart(request, id):

@@ -1,7 +1,7 @@
 body {
     font-family: 'Open Sans Condensed', sans-serif !important;
     padding-top: 100px;
-    font-size: 18px !important;
+    font-size: 14px !important;
 }
 
 footer {
@@ -81,13 +81,17 @@ caption p {
     min-height: 40px;
 }
 
-.navbar-default {
+.navbar-default  {
     background-color: #31AFB4 !important;
     border-color: #31AFB4 !important;
     background-image: none !important;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
+    color:#fff !important;
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: #fff !important;
+}
 .navbar {
     background-image: none !important;
 }
@@ -104,34 +108,36 @@ caption p {
     background-image: none !important;
 }
 
-/*-- /Tab Styles --*/
-.tabs{
-    background-color: #2A363B;
+.btn-primary {
+    color: #fff;
+    background-color: #115571 !important;
+    border-color: #115571 !important;
 }
-.tabs .tab a:hover, .tabs .tab a.active{
-    color: #e84a5f;
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #115571 !important;
+}
+
+.nav-pills {
+    padding-bottom: 20px;
+}
+
+.badge {
+    background-color: #115571 !important;
+}
+
+.brand {
+    color: #115571 !important;
+    font-size: 17px !important
+}
+
+.zambia img {
+    vertical-align: middle;
+    max-width: 100% !important;
 }
 
 
-/*-- Responsive Styling --*/
-#login_img_container img{
-    max-width: 75px;
-    margin: 50px 0;
-}
-
-.valign-mobile-fix{
-    margin-top: 150px;
-}
-
-@media only screen and (min-width: 768px){
-    .comment-profile-img{
-        max-width: 50px;
-    }
-    #login_img_container img{
-        margin: 150px 0;
-        max-width: 200px;
-    }
-    .valign-mobile-fix{
-        margin-top: auto;
-    }
+img {
+    max-width: 100% !important;
 }

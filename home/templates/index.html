@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head_css %}
+    <style>
+        .about-header{
+            background-image: url('{{ MEDIA_URL }}{{ animal.profile_img }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .darken-header{
+            background: rgba(42, 54, 59, 0.5);
+            width: 100%;
+            height: 100%;
+        }
+        
+        .center-form {
+            padding-top: 10px;
+            margin: 0 auto;
+            max-width: 70%;
+        }
+        
+        button[type="submit"] {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            background-color: #115571;
+        }
+        @media only screen and (min-width: 768px){
+            /* Only display header-img for > tablets */
+            .animal-header{
+                background-image: url('{{ MEDIA_URL }}{{ animal.header_img }}');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    </style>
+{% endblock head_css %}
+
+{% block content %}
+<div class="zambia">
+    <img src="{% static 'images/UN0145988.jpg' %}" alt="Children of Zambia" />
+</div>
+<!-- Tabs -->
+<div class="information">
+
+    <ul class="nav nav-pills nav-justified">
+        <li class="active"><a data-toggle="tab" href="#home">About Us</a></li>
+        <li><a data-toggle="tab" href="#issues">Issues</a></li>
+        <li><a data-toggle="tab" href="#education">Education</a></li>
+    </ul>
+
+    <!-- Display Abour Us -->
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <p>
+                <strong class="brand">Children of Zambia</strong> is a non profit organization focused on making a long-term impact by helping kids living in poverty access education and achieving graduation focusing in their future, so they can achieve
+                the goal of breaking the cycle of poverty.
+            </p>
+            <p>Education doesn't have a one-size-fits-all solution. Your donations are invested in helping kids complete kindergarten, primary and secondary school using a wide range of tools to make it happen: providing school fees, uniforms, supplies,
+                tutoring and scholarships.</p>
+            <br>
+            <h4 class="mission">Our Mission</h4>
+            <p>With your help, we invest in the lives of children and youth, build the healthy environments they need to thrive, and empower them to create lasting change in their own lives and communities.</p>
+            <br>
+            <h4 class="vission">Our Vission</h4>
+            <p>We are committed to delivering sustainable results, and recognize that clarity, learning and growth are at the heart of the work we do together. When we harness this power collectively, we change the course of history.</p>
+        </div>
+
+
+        <!-- Display Issues -->
+        <div id="issues" class="tab-pane fade">
+            <p>
+                Poverty, at its most extreme form, is destitution. It’s trying to survive without even the most basic of needs, like food, water or shelter. For sub-Saharan Africa, that’s the reality for almost half of the population. Africa is the poorest continent
+                on earth by a long shot. With the exception of three, 28 of the poorest countries in the world are in Africa.
+            </p>
+            <br>
+            <h4 class="education">Education</h4>
+            <p>Of all regions, sub-Saharan Africa has the highest rates of education exclusion. Over one-fifth of children between the ages of about 6 and 11 are out of school, followed by one-third of youth between the ages of about 12 and 14. According
+                to UIS data, almost 60% of youth between the ages of about 15 and 17 are not in school.</p>
+            <p>Without urgent action, the situation will likely get worse as the region faces a rising demand for education due to a still-growing school-age population.</p>
+            <br>
+            <h4>Africa: a continent of children</h4>
+            <ul>
+                <li>Half of the continent’s population is children, up to 20% of which are disabled.</li>
+                <li>An ever-increasing number are growing up stunted because of the challenges of malnutrition.</li>
+                <li>Diseases like HIV/AIDS are leaving kids orphaned and in charge of their households at very young ages. An estimated 50 million orphans live in Africa.</li>
+                <li>Malaria kills 3,000 African children per day.</li>
+                <li>With a population expected to more than double by 2050, even fewer resources will be available to go around without dramatic change.</li>
+            </ul>
+            <br>
+            <h4>Difficult conditions</h4>
+            <ul>
+                <li>The infrastructure that most of the world takes for granted is missing or severely limited in Africa. 589 million sub-Saharan Africans live without electricity and cook by burning whatever they can find.</li>
+                <li>Water and sanitation issues cost these countries more than the total economic aid they receive. Of all of the people in the world without access to safe water, almost 40% live in Africa.</li>
+                <li>Hunger is a major issue, and Africa is producing less food per person, with the average plot of land being too small to feed a family.</li>
+            </ul>
+        </div>
+
+        <!-- Schools -->
+        <div id="education" class="tab-pane fade">
+            <p>Your support is an investment in the future, helping disadvantaged kids stay in school and complete their education. When you make a donation to our children, you provide the resources and opportunities children and youth need, from kindergarten
+                through high school, and beyond.</p>
+            <p>When they are enrolled in our sponsorship program, kids gain access to the educational tools they need to succeed, based on age, location and their own unique life circumstances. Keeping young children from falling behind early is critical
+                to their academic success. Providing resources that keep them on track so they can graduate from high school is the next vital step. Then, as they graduate from our program, HOPE is there for them to continue their education. </p>
+            <div class="row photos">
+                <div class="col-md-4 sm-12">
+                    <img src="{% static 'images/mwesigwa-joel-FXdIjVRFh24-unsplash.jpg' %}" alt="Children of Zambia" />
+                </div>
+                <div class="col-md-4 sm-12">
+                    <img src="{% static 'images/mwesigwa-joel-jHvedTh-avo-unsplash.jpg' %}" alt="Children of Zambia" />
+                </div>
+                <div class="col-md-4 sm-12">
+                    <img src="{% static 'images/students-377789__340.jpg' %}" alt="Children of Zambia" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    
+{% endblock %}
