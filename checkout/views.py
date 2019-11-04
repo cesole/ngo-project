@@ -28,12 +28,12 @@ def checkout(request):
             for id, donation in cart.items():
                 child = get_object_or_404(Child, pk=id)
                 total += donation 
-                order_line_item = OrderLineItem(
+                orderlineitem = OrderLineItem(
                     order=order,
                     child=child,
                     donation=donation
                 )
-                order_line_item.save()
+                orderlineitem.save()
             
             try:
                 customer = stripe.Charge.create(

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="row">
+            <div class="col-md-3 sm-3">
+                <div class="child" style="background-image: url('{{ MEDIA_URL }}{{ post.image }}')"></div>
+            </div>
+            <div class="col-md-9 sm-9">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content|truncatewords:30 }}</p>
+                <p><a href="{% url 'post_detail' post.id %}" class="btn btn-success">Read more</a></p>
+                <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
+            </div>
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock %}
