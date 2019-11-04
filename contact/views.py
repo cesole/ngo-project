@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .form import *
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import send_mail
 from django.conf import settings
+from django.core.mail import EmailMessage
+from .forms import *
 
-# Create your views here.
+
 def Contact(request):
     Contact_Form = ContactForm
     if request.method == 'POST':
@@ -26,8 +27,8 @@ def Contact(request):
             email = EmailMessage(
                 "New contact form email",
                 content,
-                settings.EMAIL_HOST_USER,
-		        ['ceci.abt@gmail.com'],
+                "Creative web" + '',
+                ['myfriendkhendelwal@gmail.com'],
                 headers = { 'Reply To': contact_email }
             )
 
@@ -35,5 +36,3 @@ def Contact(request):
 
             return redirect('index')
     return render(request, 'contact.html', {'form':Contact_Form })
-    
-    

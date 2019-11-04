@@ -4,7 +4,7 @@ from django.urls import reverse
 from .forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 from django.contrib.auth.models import User
 
 
@@ -52,7 +52,8 @@ def login(request):
 def profile(request):
     """A view that displays the profile page of a logged in user"""
     orders = Order.objects.filter(full_name=request.user)
-    return render(request, 'profile.html', {"orders":orders})
+    orderlineitems = OrderLineItem.objects.all()
+    return render(request, 'profile.html', {"orderlineitems":orderlineitems})
 
 
 def register(request):
@@ -77,3 +78,4 @@ def register(request):
 
     args = {'user_form': user_form}
     return render(request, 'register.html', args) 
+    

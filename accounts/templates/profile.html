@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
    
-  {% if orders %}
+  {% if orderlineitems %}
     <h3>Your donations history: </h3>
   
-    {% for order in orders %}
+    {% for orderlineitem in orderlineitems %}
     <div class="history">
-      <h4>Order number: {{order.id}}</h4>
+      <h4>Order number: {{orderlineitem.id}}</h4>
     <ul class="history-list">
-      <li scope="row">Date of your order: {{ order.date }}</li>
-      <li scope="row">Child: {{ order.orderlineitem.child }}</li>
-      <li scope="row">Donation: {{ order.orderlineitem.donation }} €</li>
+      <li scope="row">Date of your order: {{ orderlineitem.order.date }}</li>
+      <li scope="row">Child: {{ orderlineitem.child }}</li>
+      <li scope="row">Donation: {{ orderlineitem.donation }} €</li>
     </ul>
     </div>
     {% endfor %}
