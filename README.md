@@ -16,22 +16,19 @@ This application is intended for use by all, but mainly people that want to dona
 Below are the wireframes for the project.
 
 About Us/Index:
-![Index](https://user-images.githubusercontent.com/42648801/63551020-4bab4e80-c534-11e9-956f-4ab752959eae.png)
+![About Us](https://user-images.githubusercontent.com/42648801/68475010-3dadc580-0227-11ea-87e2-a6806362b98f.jpg)
 
 Children:
-![meal](https://user-images.githubusercontent.com/42648801/63551091-78f7fc80-c534-11e9-8853-2f7cb90215d0.png)
+![children](https://user-images.githubusercontent.com/42648801/68475054-54541c80-0227-11ea-8b5c-643aec5e7959.jpg)
 
 News:
-![login](https://user-images.githubusercontent.com/42648801/63551112-857c5500-c534-11e9-8d46-f9e7589e83c3.png)
+![News](https://user-images.githubusercontent.com/42648801/68475075-65049280-0227-11ea-9d29-f9a4366adbac.jpg)
 
 Cart:
-![My Recipe](https://user-images.githubusercontent.com/42648801/63551130-9200ad80-c534-11e9-9111-146c27ba3db6.png)
+![cart](https://user-images.githubusercontent.com/42648801/68475091-764d9f00-0227-11ea-8ba5-9bf377ab0448.jpg)
 
 Checkout:
-![recipe](https://user-images.githubusercontent.com/42648801/63551149-9fb63300-c534-11e9-8cd2-c5d571d62531.png)
-
-For add and edit recipe are also the same, with difference of the buttons:
-![add recipe](https://user-images.githubusercontent.com/42648801/63551160-a8a70480-c534-11e9-9762-23b7b49c514c.png)
+![checkout](https://user-images.githubusercontent.com/42648801/68475117-82d1f780-0227-11ea-8108-524e7f7b8c90.jpg)
 
 
 ## Layout
