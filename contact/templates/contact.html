@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
-
+{% load bootstrap_tags %}
 
 {% block content %}
 <div class="container">
+    {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
     <div  class="row">
-        <div  class="col l12">
+        <div  class="center" align="center">
             <h1>Contact form</h1>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-            <button class="btn waves-effect waves-light" type="submit">Send Email</button>
+                {{ form | as_bootstrap }}
+            <button class="btn btn-primary" type="submit">Send Email</button>
             </form>
         </div>
     </div>
