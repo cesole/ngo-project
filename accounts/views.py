@@ -53,6 +53,7 @@ def profile(request):
     """A view that displays the profile page of a logged in user"""
     orders = Order.objects.filter(full_name=request.user)
     orderlineitems = OrderLineItem.objects.all()
+    
     return render(request, 'profile.html', {"orderlineitems":orderlineitems})
 
 

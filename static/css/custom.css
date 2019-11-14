@@ -112,8 +112,13 @@ caption p {
     background-image: none !important;
 }
 
-.pagination.pagination>li>a, .pagination>li>span {
+.pagination>li>a, .pagination>li>span {
     color: #31AFB4 !important;
+}
+
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+    color: #777 !important;
+    cursor: not-allowed;
 }
 
 .btn-success {
@@ -164,3 +169,10 @@ btn-default {
 }
 
 
+.pagination .disabled {
+    color: #CDCDCD !important;
+}
+
+.form-control {
+    margin-bottom: 15px !important;
+}

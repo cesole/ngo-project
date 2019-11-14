@@ -38,9 +38,9 @@
             {% if children.has_previous %}
                 <!-- This is for when user has searched - the custom URL will keep their search parameters when changing pages -->
                 {% if custom_url %}
-                    <li class="waves-effect"><a href="{{ custom_url }}&page={{ children.previous_page_number }}"><i class="material-icons">Next</i></a></li>
+                    <li class="waves-effect"><a href="{{ custom_url }}&page={{ children.previous_page_number }}"><i class="material-icons">Previous</i></a></li>
                 {% else %}
-                    <li class="waves-effect"><a href="?page={{ children.previous_page_number }}"><i class="material-icons">Next</i></a></li>
+                    <li class="waves-effect"><a href="?page={{ children.previous_page_number }}"><i class="material-icons">Previous</i></a></li>
                 {% endif %}
             {% else %}
                 <li class="disabled"><a href="#!"><i class="material-icons">Previous</i></a></li>
