@@ -1,5 +1,5 @@
 colorama==0.3.9
-Django==1.11.17
+Django==1.11.23
 django-forms-bootstrap==3.1.0
 docutils==0.15.2
 jmespath==0.9.4
@@ -17,3 +17,4 @@ chardet==2.2.1
 html5lib==0.999
 pycurl==7.19.3
 wheel==0.24.0
+Twisted==19.7.0
