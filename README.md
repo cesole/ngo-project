@@ -82,9 +82,8 @@ The following section describes the process to deploy this project to Heroku.
 - Ensure all required technologies are installed locally, as per the requirements.txt file.
 - Via Terminal, login to Heroku, using 'heroku login' command. 
 - Push project to Heroku, using 'push -u heroku master' command.
-- Create scale, using 'heroku ps:scale web=1' command.
 - Login to Heroku and select newly created app.
-- Select settings. Select ‘Reveal Config'. Add IP 0.0.0.0 and PORT 5000.
+- Select settings. Select ‘Reveal Config'. Add SECRET_KEY and DISABLE_COLLECTSTATIC=1.
 - From 'More' menu on the top right, select 'Restart all dynos'.
 
 You can see it here: [https://ngo-ces.herokuapp.com/](url)
