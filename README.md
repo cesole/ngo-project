@@ -96,7 +96,7 @@ I found several issues and I struggle with many things:
 - I could not display messages of success or error for sending the contact form
 - The payment was not passing correctly
 - I could not display the orderitemlist in "my orders"
-- Following the auth code from Code Institute there was an issue with the password_reset
+- Following the auth code from Code Institute there was an issue with the password_reset, and I realize it is because it can't connect with my email properly due to security reasons. Error "SMTPServerDisconnected at /accounts/password-reset/"
 
 
 ## Acknowledegments

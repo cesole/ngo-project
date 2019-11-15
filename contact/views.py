@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.contrib import messages
 from django.conf import settings
 from django.core.mail import EmailMessage
 from .forms import *
 from django.template import loader
+import os
 
 
 def Contact(request):
@@ -19,12 +21,11 @@ def Contact(request):
             send_mail(subject, content, 'ceci.abt@gmail.com', [email], fail_silently=False)
             if send_mail:
                 messages.success(request, "Your message has been sent")
-                return render(request, "contact")
             else:
                 messages.error(request,'Error in form.Try Again')
-                return redirect(request, "contact")
         else:
             form = EmailForm(request.POST)
+
     return render(request, 'contact.html', {'form':Contact_Form })
     
     
