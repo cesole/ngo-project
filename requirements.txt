@@ -18,3 +18,4 @@ html5lib==0.999
 pycurl==7.19.3
 wheel==0.24.0
 Twisted==19.7.0
+dj-database-url==0.5.0
